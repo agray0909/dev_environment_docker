@@ -1,0 +1,11 @@
+ide:
+  image: gray/dev:latest
+  privileged: true
+  volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix:ro
+    - /dev/bus/usb:/dev/bus/usb
+    - ~/dev:/home/gray/dev
+  environment:
+    - DISPLAY
+  
+# sudo docker run -ti -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix 6ee4fb1d292a bash
